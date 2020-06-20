@@ -15,7 +15,8 @@ class CategoryTest extends TestCase
         parent::setUp();
     }
 
-    public function test_it_many_children() {
+    public function test_it_many_children()
+    {
         $category = factory(Category::class)->create();
 
 
@@ -26,7 +27,8 @@ class CategoryTest extends TestCase
         $this->assertInstanceOf(Category::class, $category->children->first());
     }
 
-    public function test_it_can_fetch_only_parents() {
+    public function test_it_can_fetch_only_parents()
+    {
         $category = factory(Category::class)->create();
 
 
@@ -37,7 +39,8 @@ class CategoryTest extends TestCase
         $this->assertEquals(1, Category::parents()->count());
     }
 
-    public function test_it_is_orderable_by_a_numbered_order() {
+    public function test_it_is_orderable_by_a_numbered_order()
+    {
         $category = factory(Category::class)->create([
             'order' => 2,
         ]);

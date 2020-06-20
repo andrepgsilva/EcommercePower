@@ -17,7 +17,8 @@ class Category extends Model
         'order',
     ];
 
-    public function children() {
+    public function children()
+    {
         return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 }
